@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Collin M. Barrett</Authors>
+    <Company>Trickle</Company>
+    <Product>Trickle Directory</Product>
+    <Description>The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.</Description>
+    <Copyright>Copyright (c) 2021 Collin M. Barrett</Copyright>
+    <RepositoryUrl>https://github.com/khulnasoft-lab/Trickle</RepositoryUrl>
+    <PackageProjectUrl>https://trickle.khulnasoft.com</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Trickle.Directory.Api.Contracts\Trickle.Directory.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Trickle.Directory.Infrastructure\Trickle.Directory.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

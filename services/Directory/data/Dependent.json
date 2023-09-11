@@ -1,0 +1,38 @@
+[
+  {
+    "dependencyTrickleId": 60,
+    "dependentTrickleId": 1816
+  },
+  {
+    "dependencyTrickleId": 97,
+    "dependentTrickleId": 819
+  },
+  {
+    "dependencyTrickleId": 97,
+    "dependentTrickleId": 852
+  },
+  {
+    "dependencyTrickleId": 97,
+    "dependentTrickleId": 853
+  },
+  {
+    "dependencyTrickleId": 224,
+    "dependentTrickleId": 2564
+  },
+  {
+    "dependencyTrickleId": 347,
+    "dependentTrickleId": 1817
+  },
+  {
+    "dependencyTrickleId": 2439,
+    "dependentTrickleId": 2440
+  },
+  {
+    "dependencyTrickleId": 2439,
+    "dependentTrickleId": 2441
+  },
+  {
+    "dependencyTrickleId": 2439,
+    "dependentTrickleId": 2442
+  }
+]

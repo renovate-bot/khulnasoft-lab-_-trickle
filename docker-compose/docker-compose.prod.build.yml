@@ -1,0 +1,19 @@
+# overrides for production build
+# https://github.com/docker/compose/issues/4047
+
+version: "3.7"
+
+services:
+  archival-api:
+    build:
+      context: ../services
+      dockerfile: Archival/Trickle.Archival.Api/Dockerfile
+
+  directory-api:
+    build:
+      context: ../services
+      dockerfile: Directory/Trickle.Directory.Api/Dockerfile
+
+  web:
+    build:
+      context: ../web

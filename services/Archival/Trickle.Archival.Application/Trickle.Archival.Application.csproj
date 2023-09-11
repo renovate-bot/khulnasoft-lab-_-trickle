@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Collin M. Barrett</Authors>
+    <Company>Trickle</Company>
+    <Product>Trickle Archival</Product>
+    <Description>The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.</Description>
+    <Copyright>Copyright (c) 2021 Collin M. Barrett</Copyright>
+    <RepositoryUrl>https://github.com/khulnasoft-lab/Trickle</RepositoryUrl>
+    <PackageProjectUrl>https://trickle.khulnasoft.com</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Trickle.Archival.Domain\Trickle.Archival.Domain.csproj" />
+    <ProjectReference Include="..\Trickle.Archival.Infrastructure\Trickle.Archival.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

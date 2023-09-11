@@ -1,6 +1,6 @@
 # init base
 FROM nginx:alpine as base
-LABEL org.opencontainers.image.description="trickle.com | github.com/khulnasoft-lab/trickle | A React & TypeScript UI built with Ant Design."
+LABEL org.opencontainers.image.description="trickle.khulnasoft.com | github.com/khulnasoft-lab/trickle | A React & TypeScript UI built with Ant Design."
 COPY server/conf.d /etc/nginx/conf.d
 
 # init build

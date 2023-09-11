@@ -1,0 +1,101 @@
+trigger:
+  batch: false
+  branches:
+    include: [main]
+  paths:
+    include:
+      [
+        services/Directory/azure-pipelines.api.yaml,
+        services/SharedKernel/Trickle.SharedKernel.Logging/*,
+        services/Directory/Trickle.Directory.Domain/*,
+        services/Directory/Trickle.Directory.Infrastructure/*,
+        services/Directory/Trickle.Directory.Infrastructure.Migrations/*,
+        services/Directory/Trickle.Directory.Api.Contracts/*,
+        services/Directory/Trickle.Directory.Application/*,
+        services/Directory/Trickle.Directory.Api/*,
+        services/.editorignore,
+        services/.dockerignore,
+        docker-compose/docker-compose.yml,
+        docker-compose/docker-compose.prod.yml,
+        docker-compose/docker-compose.prod.build.yml,
+        docker-compose/.env,
+        docker-compose/directory-db.env,
+        docker-compose/directory-api.env,
+      ]
+
+pr:
+  autoCancel: false
+  branches:
+    include: [main]
+  paths:
+    include:
+      [
+        services/Directory/azure-pipelines.api.yaml,
+        services/SharedKernel/Trickle.SharedKernel.Logging/*,
+        services/Directory/Trickle.Directory.Domain/*,
+        services/Directory/Trickle.Directory.Infrastructure/*,
+        services/Directory/Trickle.Directory.Infrastructure.Migrations/*,
+        services/Directory/Trickle.Directory.Api.Contracts/*,
+        services/Directory/Trickle.Directory.Application/*,
+        services/Directory/Trickle.Directory.Api/*,
+        services/.editorignore,
+        services/.dockerignore,
+        docker-compose/docker-compose.yml,
+        docker-compose/docker-compose.prod.yml,
+        docker-compose/docker-compose.prod.build.yml,
+        docker-compose/.env,
+        docker-compose/directory-db.env,
+        docker-compose/directory-api.env,
+      ]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+    fetchDepth: 5
+
+  - task: Docker@2
+    displayName: build
+    inputs:
+      containerRegistry: github-container-registry
+      repository: khulnasoft-lab/trickle-directory-api
+      command: build
+      Dockerfile: services/Directory/Trickle.Directory.Api/Dockerfile
+      buildContext: ./services
+      tags: |
+        latest
+        $(Build.BuildId)
+    env:
+      DOCKER_BUILDKIT: 1
+
+  - task: Docker@2
+    displayName: push
+    inputs:
+      containerRegistry: github-container-registry
+      repository: khulnasoft-lab/trickle-directory-api
+      command: push
+      tags: |
+        latest
+        $(Build.BuildId)
+    env:
+      DOCKER_BUILDKIT: 1
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+
+  - task: CopyFiles@2
+    displayName: stage docker-compose files
+    inputs:
+      SourceFolder: $(Build.SourcesDirectory)/docker-compose
+      Contents: |
+        docker-compose.yml
+        docker-compose.prod.yml
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+
+  - task: PublishBuildArtifacts@1
+    displayName: publish docker-compose files
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
+      ArtifactName: drop
+      publishLocation: Container
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))

@@ -1,0 +1,54 @@
+[
+  {
+    "forkTrickleId": 350,
+    "upstreamTrickleId": 12
+  },
+  {
+    "forkTrickleId": 563,
+    "upstreamTrickleId": 16
+  },
+  {
+    "forkTrickleId": 16,
+    "upstreamTrickleId": 59
+  },
+  {
+    "forkTrickleId": 16,
+    "upstreamTrickleId": 99
+  },
+  {
+    "forkTrickleId": 158,
+    "upstreamTrickleId": 258
+  },
+  {
+    "forkTrickleId": 163,
+    "upstreamTrickleId": 262
+  },
+  {
+    "forkTrickleId": 16,
+    "upstreamTrickleId": 278
+  },
+  {
+    "forkTrickleId": 164,
+    "upstreamTrickleId": 293
+  },
+  {
+    "forkTrickleId": 167,
+    "upstreamTrickleId": 295
+  },
+  {
+    "forkTrickleId": 166,
+    "upstreamTrickleId": 301
+  },
+  {
+    "forkTrickleId": 565,
+    "upstreamTrickleId": 301
+  },
+  {
+    "forkTrickleId": 312,
+    "upstreamTrickleId": 311
+  },
+  {
+    "forkTrickleId": 313,
+    "upstreamTrickleId": 311
+  }
+]

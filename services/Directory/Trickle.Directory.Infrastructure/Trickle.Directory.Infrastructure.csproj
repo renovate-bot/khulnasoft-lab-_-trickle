@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Collin M. Barrett</Authors>
+    <Company>Trickle</Company>
+    <Product>Trickle Directory</Product>
+    <Description>The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.</Description>
+    <Copyright>Copyright (c) 2021 Collin M. Barrett</Copyright>
+    <RepositoryUrl>https://github.com/khulnasoft-lab/Trickle</RepositoryUrl>
+    <PackageProjectUrl>https://trickle.khulnasoft.com</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharedKernel\Trickle.SharedKernel.Logging\Trickle.SharedKernel.Logging.csproj" />
+    <ProjectReference Include="..\Trickle.Directory.Domain\Trickle.Directory.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

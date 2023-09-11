@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Collin M. Barrett</Authors>
+    <Company>Trickle</Company>
+    <Product>Trickle Archival</Product>
+    <Description>The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.</Description>
+    <Copyright>Copyright (c) 2021 Collin M. Barrett</Copyright>
+    <RepositoryUrl>https://github.com/khulnasoft-lab/Trickle</RepositoryUrl>
+    <PackageProjectUrl>https://trickle.khulnasoft.com</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.34" />
+    <PackageReference Include="HangFire.Redis.StackExchange" Version="1.8.6" />
+    <PackageReference Include="LibGit2Sharp" Version="0.27.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Directory\Trickle.Directory.Api.Contracts\Trickle.Directory.Api.Contracts.csproj" />
+    <ProjectReference Include="..\..\SharedKernel\Trickle.SharedKernel.Logging\Trickle.SharedKernel.Logging.csproj" />
+    <ProjectReference Include="..\Trickle.Archival.Domain\Trickle.Archival.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

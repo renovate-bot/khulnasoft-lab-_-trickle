@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Collin M. Barrett</Authors>
+    <Company>Trickle</Company>
+    <Product>Trickle Shared Kernel Logging</Product>
+    <Description>The independent, comprehensive directory of filter and host lists for advertisements, trackers, malware, and annoyances.</Description>
+    <Copyright>Copyright (c) 2021 Collin M. Barrett</Copyright>
+    <RepositoryUrl>https://github.com/khulnasoft-lab/Trickle</RepositoryUrl>
+    <PackageProjectUrl>https://trickle.khulnasoft.com</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>
